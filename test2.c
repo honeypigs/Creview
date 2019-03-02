@@ -54,6 +54,6 @@ int getnumbers() {
 int main() {
 	// squ();
 	// change();
-	getnumbers();
+	// getnumbers();
 	return 0;
 }
