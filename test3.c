@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-int divisor() {
+	int divisor() {
 	int m,n,temp,mul;
 	printf("input m,n\n");
 	scanf("%d,%d",&m,&n);
