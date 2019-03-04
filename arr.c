@@ -50,12 +50,17 @@ int insert() {
 }
 
 int yanghui() {
-	int a[31][31] = {0};
+	int a[31][31];
 	int n = 0;
 	while(n<1 || n >30){
 		printf("input a number 1-30\n");
 		scanf("%d",&n);
+	}for(int i = 1; i<= n ;i ++) {
+		for(int j = 1;j<= n; j++){
+			a[i][j] = 0;
+		}
 	}
+
 	for(int i = 0;i< n ; i++) {
 		a[i][0] = 1;
 	}
@@ -73,8 +78,56 @@ int yanghui() {
 	return 0;
 }
 
+int magic() {
+	int a[16][16];
+	int i,j,k,n=0;
+
+	while(n<1 || n >15 || n%2 == 0){
+		printf("please input 1--15\n");
+		scanf("%d",&n);
+	}
+
+	for(i = 1; i<= n ;i ++) {
+		for(j = 1;j<= n; j++){
+			a[i][j] = 0;
+		}
+	}
+	i = 1;
+	j = n /2 + 1;
+	a[i][j] = 1;
+	for(k = 2 ;k <= n*n ;k++) {
+		i = i - 1;
+		j =j + 1;
+		if(i < 1 && j > n) {
+			i = i + 2;
+			j = j - 1;
+		} else if(i < 1 && j <= n) {
+			i = n;
+		} else if(i >= 1 && j > n) {
+			j = 1;
+		}
+		if(a[i][j] == 0) {
+			a[i][j] = k;
+		} else {
+			i = i + 2;
+			j = j - 1;
+			a[i][j] = k;
+		}
+	}
+
+
+	for(i = 1; i<= n ;i ++) {
+		for(j = 1;j<= n; j++){
+			printf("%d\t",a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
 int main() {
-	yanghui();
+	magic();
+	// yanghui();
 	// insert();
 	// trans();
 	return 0;
