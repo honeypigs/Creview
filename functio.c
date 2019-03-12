@@ -16,6 +16,7 @@ void hanoi(int n,char a,char b,char c) {
 
 }
 
+
 int interation(float a ) {
 	double x1 ,x2 ;
 	x2 = 1.0;
