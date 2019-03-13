@@ -42,7 +42,11 @@ int comp(int *a,int *b,int *c) {
 
 int move(int *p ,int n,int m) {
 	int b[m],k = 0;
-	for(int i = (n-m);i < n;i++,k++) {
+	for(int i = (n-m);i < n;i++
+
+
+
+		,k++) {
 		b[k] = * (p + i);
 	}
 	for(int j = n - m - 1 ; j >= 0 ; j--) {
@@ -53,21 +57,35 @@ int move(int *p ,int n,int m) {
 	}
 	return 0;
 }
+
 int main() {
-	int a[50],n,m, *p;
-	printf("input how many numbers n < 50?\n");
-	scanf("%d",&n);
-	printf("input numbers\n");
-	for(int i = 0; i < n; i ++) {
-		scanf("%d",&a[i]);
-	}
+	char *p , a[100];
 	p = a;
-	printf("input move numbers\n");
-	scanf("%d",&m);
-	move(p,n,m);
-	for(int i = 0; i < n ;i ++) {
-		printf("%d - ",*(p + i)  /*a[i]*/);
+	gets(p);
+	int i;
+	for(i = 0;*(p + i) != '\0' ;i ++){
+		printf("%c",*(p+i));
+		printf("\n");
 	}
+	for(i = i - 1;i >= 0 ;i--){
+		printf("%c",*(p + i));
+	}
+	// int a[50],n,m, *p;
+	// printf("input how many numbers n < 50?\n");
+	// scanf("%d",&n);
+	// printf("input numbers\n");
+	// for(int i = 0; i < n; i ++) {
+	// 	scanf("%d",&a[i]);
+	// }
+	// p = a;
+	// printf("input move numbers\n");
+	// scanf("%d",&m);
+	// move(p,n,m);
+	// for(int i = 0; i < n ;i ++) {
+	// 	printf("%d - ",*(p + i)  /*a[i]*/);
+	// }
+
+
 	// int a,b,c,*p1,*p2,*p3;
 	// printf("input number\n");
 	// scanf("%d,%d,%d",&a,&b,&c);
